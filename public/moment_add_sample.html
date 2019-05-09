@@ -1,0 +1,39 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js"></script>
+  <script>
+    var i = 0
+    const m = moment()
+    const m_clone = moment(m)
+    
+    function minutesadd(){
+      i++;
+      
+      let pre_date1 = m.format('YYYY-MM-DD HH:mm')
+      let cur_date1 = m.add(i ,"minutes").format('YYYY-MM-DD HH:mm')
+      document.js.name1A.value = String(cur_date1);
+      document.js.name0A.value = String(pre_date1);
+      
+      let pre_date2 = moment(m_clone).format('YYYY-MM-DD HH:mm')
+      let cur_date2 = m_clone.clone().add(i ,"minutes").format('YYYY-MM-DD HH:mm')
+      document.js.name2B.value = String(cur_date2);
+      document.js.name0B.value = String(pre_date2);
+      
+    }
+    
+  </script>
+  <title>moment add SAMPLE</title>
+</head>
+
+<body>
+  <h1>moment add sample</h1>
+  push [add]
+  <form name="js">
+    Before <input type="text" name="name0A" value=""> : After <input type="text" name="name1A" value=""><br>
+    Before <input type="text" name="name0B" value=""> : After <input type="text" name="name2B" value=""><br>
+    
+    <input type="button" value="add" onclick="minutesadd()"><br>
+  </form>
+</body>
+</html>
